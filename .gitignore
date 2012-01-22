@@ -1,5 +1,9 @@
 pom.xml
-*jar
+LiquidMath.jar
+LiquidMath-1.1.0-SNAPSHOT-standalone.jar
+LiquidMath-1.1.0-SNAPSHOT.jar
+jogl-natives-windows-i586-1.1.1a.jar
+
 lib
 classes
 compstore
