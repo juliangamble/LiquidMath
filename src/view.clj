@@ -1,8 +1,16 @@
-(load-file "gui-utils.clj")
+(ns view
+  (:use guiutils
+        model
+        viewopengl
+        surfacerenderer)
+  (:import (javax.swing JFrame JLabel JTextField JButton JPanel))
+  (:gen-class))
+  
+;(load-file "gui-utils.clj")
 
 					;These values are all derived from the model.
 
-(def compiled-function (ref nil))
+;(def compiled-function (ref nil))
 
 					;These functions derive the above values from the model. They are called by the watchers below.
 
@@ -15,7 +23,7 @@
 (defn generate-compiled-function []
   (dosync (ref-set compiled-function (eval (gen-function-form)))))
 
-(load-file "view-opengl.clj")
+;(load-file "view-opengl.clj")
 
 (def text-field (JTextField.))
 

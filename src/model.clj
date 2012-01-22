@@ -1,3 +1,6 @@
+(ns model
+  (:gen-class))
+
 ;The following refs (mutable objects) define the model
 (def function-str (ref ""))
 (def num-lines (ref 0))

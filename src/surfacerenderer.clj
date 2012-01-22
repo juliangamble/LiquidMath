@@ -1,5 +1,14 @@
-(import '(javax.media.opengl GL))
+(ns surfacerenderer
+  (:import (javax.media.opengl GL))
+  ;(:use view)
+  (:use model)
+  (:gen-class))
+
+;(import '(javax.media.opengl GL))
 	
+;Moved here to remove circular reference
+(def compiled-function (ref nil))
+
 (def epsilon 0.1) ;the distance used in function space when calculating normals
 
 					;forward declaration for later use in a thread-local binding (this is an optimization - otherwise new objects are created all over the place, leading to putrid performance.

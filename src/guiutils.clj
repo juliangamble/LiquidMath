@@ -1,6 +1,12 @@
-(import '(javax.swing JFrame JLabel JTextField JButton JPanel)
-	'(java.awt.event ActionListener WindowAdapter)
-	'(java.awt GridBagLayout GridBagConstraints Color Font RenderingHints))
+(ns guiutils
+(:import (javax.swing JFrame JLabel JTextField JButton JPanel)
+	(java.awt.event ActionListener WindowAdapter)
+	(java.awt GridBagLayout GridBagConstraints Color Font RenderingHints))
+  (:gen-class))
+
+;(import '(javax.swing JFrame JLabel JTextField JButton JPanel)
+;	'(java.awt.event ActionListener WindowAdapter)
+;	'(java.awt GridBagLayout GridBagConstraints Color Font RenderingHints))
 
 (defn make-gui-panel [text-field panel]
   (defn make-text-field-constraints []

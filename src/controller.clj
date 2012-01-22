@@ -1,3 +1,12 @@
+(ns controller
+  (:import 
+	  (java.awt.event ActionListener WindowAdapter))
+
+  (:use viewopengl
+        view
+        model)
+  (:gen-class))
+
 (defn update-text-field	[]
   (when (not (= (.getText text-field) @function-str))
     (.setText text-field @function-str)))

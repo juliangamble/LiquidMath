@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>jsr-231</groupId>
+  <artifactId>jogl-natives-windows-i586</artifactId>
+  <versioning>
+    <release>1.1.1a</release>
+    <versions>
+      <version>1.1.1a</version>
+    </versions>
+    <lastUpdated>20120122114758</lastUpdated>
+  </versioning>
+</metadata>

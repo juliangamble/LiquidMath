@@ -1,47 +1,29 @@
-Clojure-Black-Scholes
+Clojure 3D Parametric Grapher
 
+Equations to try:
+  (var-set x u) (var-set y v) (var-set z (sin (/ (* u v) 10)))
+  (var-set x u) (var-set y v) (var-set z (* u (sin (/ (* u v) 20))))
+  (var-set x u) (var-set y v) (var-set z (sin u))
+
+  
+  
 This was originally written up here:
-http://www.paullegato.com/blog/swing-clojure-gui-black-scholes/
-
-This site packages it up for Web Start. 
+  http://lifeofaprogrammergeek.blogspot.com/2009/05/3d-grapher-in-clojure.html
+     
+This site packages it up for Web Start.
 
 The point here is to add Java Web start to enable it to be demoed to a wider audience
 and promote the clojure community.
 
+The tricky part in this case was getting the JOGL to work via web start. (I fine-tuned the namespaces as well). 
+
+I got the JOGL libraries from here:
+  http://download.java.net/media/jogl/builds/archive/
+  http://download.java.net/media/gluegen/builds/archive/1.0b06/
+
+I packaged the libraries up for leiningen using this:
+  http://www.pgrs.net/2011/10/30/using-local-jars-with-leiningen/
+  
 -----------------------------------------
 This is based on:
-
-Copyright (c) 2010 Paul Legato (pjlegato at gmail). All rights reserved.
-
-Black-Scholes (and eventually other) options pricing models in
-Clojure.  Patches are welcome provided they are released under the
-same license as this code as per below, or else public domain.
-
-================================================================
-Disclaimer: This code comes with NO WARRANTY WHATSOEVER, express or implied.
-There may be any number of bugs. Use at your own risk.
-================================================================
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
-    * Neither the name of Paul Legato nor the
-      names of its contributors may be used to endorse or promote products
-      derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+     https://github.com/curran/LiquidMath

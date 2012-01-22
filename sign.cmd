@@ -1,1 +1,1 @@
-jarsigner -keystore compstore -storepass sunshine -keypass sunshine -signedjar clojure-black-scholes.jar clojure-black-scholes-1.0.0-SNAPSHOT-standalone.jar signFiles
+jarsigner -keystore compstore -storepass sunshine -keypass sunshine -signedjar LiquidMath.jar LiquidMath-1.1.0-SNAPSHOT-standalone.jar signFiles

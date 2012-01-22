@@ -1,10 +1,47 @@
-(load-file "surface-renderer.clj")
+(ns viewopengl
+(:import (java.awt Frame)
+        (java.awt.event WindowListener WindowAdapter MouseAdapter MouseMotionAdapter)
+        (javax.media.opengl GLCanvas GLEventListener GL GLAutoDrawable)
+        (javax.media.opengl.glu GLU)
+        (com.sun.opengl.util Animator))
+  (:use surfacerenderer)
+  (:gen-class
+      :post-init post-init
+  ))
 
-(import '(java.awt Frame)
-        '(java.awt.event WindowListener WindowAdapter MouseAdapter MouseMotionAdapter)
-        '(javax.media.opengl GLCanvas GLEventListener GL GLAutoDrawable)
-        '(javax.media.opengl.glu GLU)
-        '(com.sun.opengl.util Animator))
+;(load-file "surface-renderer.clj")
+
+(comment
+;Load native libs for jnlp
+;http://leolewis.website.org/wordpress/2011/05/24/jni-in-java-web-start-applet-environment/
+;Field usrPathFiled = ClassLoader.class.getDeclaredField("usr_paths");  
+(def usrPathFiled (ClassLoader/class/getDeclaredField "usr_paths"))
+
+;usrPathFiled.setAccessible(true);  
+(.setAccessible usrPathFiled true)
+
+;String[] usrPath = (String[]) usrPathFiled.get(null);  
+(def usrPath (.get usrPathFiled null))
+
+;String[] newUsrPath = new String[usrPath.length + 1];  
+
+;System.arraycopy(usrPath, 0, newUsrPath, 0, usrPath.length);  
+(System/arraycopy usrPath 0 newUsrPath 0 (.length usrPath))
+
+;newUsrPath[usrPath.length] = destFile.getParentFile().getAbsolutePath();  
+(def newUsrPath (.getAbsolutePath (.getParentFile destFile)))
+
+;usrPathFiled.set(null, newUsrPath);  
+(.set usrPathFiled null newUsrPath)
+
+)
+
+
+;(import '(java.awt Frame)
+;        '(java.awt.event WindowListener WindowAdapter MouseAdapter MouseMotionAdapter)
+;        '(javax.media.opengl GLCanvas GLEventListener GL GLAutoDrawable)
+;        '(javax.media.opengl.glu GLU)
+;        '(com.sun.opengl.util Animator))
 (def rotateT 0)
 (def rotation-factor 0.3)
 (def previous-mouse-x (ref 0))
@@ -19,9 +56,16 @@
 (def display-list-id (ref 0))
 (def display-list-needs-updating (ref true))
 
+
+  
+
+
+
+
 (def glu (new GLU))
 (def canvas (new GLCanvas))
 (def animator (new Animator canvas))
+
 
 (.addGLEventListener
  canvas
@@ -95,3 +139,4 @@
  (proxy [MouseMotionAdapter] []
    (mouseDragged [e] (dosync (rotate rotation-x @previous-rotation-x (.getX e) @previous-mouse-x)
 			     (rotate rotation-y @previous-rotation-y (.getY e) @previous-mouse-y)))))
+			     
