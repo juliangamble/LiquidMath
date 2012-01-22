@@ -24,6 +24,9 @@ I got the JOGL libraries from here:
 I packaged the libraries up for leiningen using this:
   http://www.pgrs.net/2011/10/30/using-local-jars-with-leiningen/
   
+The only trick after that was ripping out all the other jar signatures and making sure
+they all had mine. (Manual process)
+  
 -----------------------------------------
 This is based on:
      https://github.com/curran/LiquidMath
