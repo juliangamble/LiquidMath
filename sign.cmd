@@ -1,1 +1,0 @@
-jarsigner -keystore compstore -storepass sunshine -keypass sunshine -signedjar LiquidMath.jar LiquidMath-1.1.0-SNAPSHOT-standalone.jar signFiles
